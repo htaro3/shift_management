@@ -105,10 +105,7 @@ public class EmployeeAction extends ActionBase {
                     getRequestParam(AttributeConst.EMP_NAME),
                     getRequestParam(AttributeConst.EMP_PASS),
                     toNumber(getRequestParam(AttributeConst.EMP_ADMIN_FLG)),
-                    null,
-                    null,
-                    AttributeConst.DEL_FLAG_FALSE.getIntegerValue(),
-                    toNumber(getRequestParam(AttributeConst.EMP_DIRECTOR_FLG)));//追加
+                    AttributeConst.DEL_FLAG_FALSE.getIntegerValue());
 
             //アプリケーションスコープからpepper文字列を取得
             String pepper = getContextScope(PropertyConst.PEPPER);
@@ -212,10 +209,7 @@ public class EmployeeAction extends ActionBase {
                     getRequestParam(AttributeConst.EMP_NAME),
                     getRequestParam(AttributeConst.EMP_PASS),
                     toNumber(getRequestParam(AttributeConst.EMP_ADMIN_FLG)),
-                    null,
-                    null,
-                    AttributeConst.DEL_FLAG_FALSE.getIntegerValue(),
-                    toNumber(getRequestParam(AttributeConst.EMP_DIRECTOR_FLG)));
+                    AttributeConst.DEL_FLAG_FALSE.getIntegerValue());
 
             //アプリケーションスコープからpepper文字列を取得
             String pepper = getContextScope(PropertyConst.PEPPER);

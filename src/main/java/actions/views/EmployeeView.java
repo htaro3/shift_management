@@ -1,7 +1,5 @@
 package actions.views;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,23 +41,9 @@ public class EmployeeView {
     private Integer adminFlag;
 
     /**
-     *登録日時
-     */
-    private LocalDateTime createdAt;
-
-    /**
-     * 更新日時
-     */
-    private LocalDateTime updatedAt;
-
-    /**
      * 削除された従業員かどうか（現役：0、削除済み：1）
      */
     private Integer deleteFlag;
-    /**
-     * 承認権限があるかどうか（一般：0、承認権限：1）
-     */
-    private Integer directorFlag;
 
 
 

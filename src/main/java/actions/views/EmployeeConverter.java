@@ -30,18 +30,11 @@ public class EmployeeConverter {
                         : ev.getAdminFlag() == AttributeConst.ROLE_ADMIN.getIntegerValue()
                                 ? JpaConst.ROLE_ADMIN
                                 : JpaConst.ROLE_GENERAL,
-                ev.getCreatedAt(),
-                ev.getUpdatedAt(),
                 ev.getDeleteFlag() == null
                         ? null
                         : ev.getDeleteFlag() == AttributeConst.DEL_FLAG_TRUE.getIntegerValue()
                                 ? JpaConst.EMP_DEL_TRUE
-                                : JpaConst.EMP_DEL_FALSE,
-        ev.getDirectorFlag() == null
-                ? null
-                : ev.getDirectorFlag() == AttributeConst.ROLE_DIRECTOR.getIntegerValue()
-                        ? JpaConst.ROLE_DIRECTOR
-                        : JpaConst.ROLE_GENERAL2);
+                                : JpaConst.EMP_DEL_FALSE);
 
     }
 
@@ -66,19 +59,12 @@ public class EmployeeConverter {
                         : e.getAdminFlag() == JpaConst.ROLE_ADMIN
                                 ? AttributeConst.ROLE_ADMIN.getIntegerValue()
                                 : AttributeConst.ROLE_GENERAL.getIntegerValue(),
-                e.getCreatedAt(),
-                e.getUpdatedAt(),
                 e.getDeleteFlag() == null
                         ? null
                         : e.getDeleteFlag() == JpaConst.EMP_DEL_TRUE
                                 ? AttributeConst.DEL_FLAG_TRUE.getIntegerValue()
-                                : AttributeConst.DEL_FLAG_FALSE.getIntegerValue(),
+                                : AttributeConst.DEL_FLAG_FALSE.getIntegerValue());
 
-                                e.getDirectorFlag() == null
-                                ? null
-                                : e.getDirectorFlag() == JpaConst.ROLE_DIRECTOR
-                                        ? AttributeConst.ROLE_DIRECTOR.getIntegerValue()
-                                        : AttributeConst.ROLE_GENERAL2.getIntegerValue());
     }
 
     /**
@@ -107,11 +93,8 @@ public class EmployeeConverter {
         e.setName(ev.getName());
         e.setPassword(ev.getPassword());
         e.setAdminFlag(ev.getAdminFlag());
-        e.setCreatedAt(ev.getCreatedAt());
-        e.setUpdatedAt(ev.getUpdatedAt());
         e.setDeleteFlag(ev.getDeleteFlag());
 
-        e.setDirectorFlag(ev.getDirectorFlag());
 
 
     }

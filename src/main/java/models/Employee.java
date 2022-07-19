@@ -1,7 +1,5 @@
 package models;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -76,17 +74,6 @@ public class Employee {
     @Column(name = JpaConst.EMP_COL_ADMIN_FLAG, nullable = false)
     private Integer adminFlag;
 
-    /**
-     *登録日時
-     */
-    @Column(name = JpaConst.EMP_COL_CREATED_AT, nullable = false)
-    private LocalDateTime createdAt;
-
-    /**
-     * 更新日時
-     */
-    @Column(name = JpaConst.EMP_COL_UPDATED_AT, nullable = false)
-    private LocalDateTime updatedAt;
 
     /**
      * 削除された従業員かどうか（現役：0、削除済み：1）
@@ -94,10 +81,5 @@ public class Employee {
     @Column(name = JpaConst.EMP_COL_DELETE_FLAG, nullable = false)
     private Integer deleteFlag;
 
-    /**
-     * 承認権限があるかどうか （一般：0、承認権限：1）追加
-     */
-    @Column(name = JpaConst.EMP_COL_DIRECTOR_FLAG, nullable = false)
-    private Integer directorFlag;
 
 }

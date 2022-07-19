@@ -107,13 +107,11 @@ public class ReportAction extends ActionBase {
             //パラメータの値をもとに日報情報のインスタンスを作成する
             ReportView rv = new ReportView(
                     null,
-                    ev, //ログインしている従業員を、日報作成者として登録する
+                    ev, //ログインしている従業員を、シフト作成者として登録する
                     day,
-                    getRequestParam(AttributeConst.REP_TITLE),
-                    getRequestParam(AttributeConst.REP_CONTENT),
-                    null,
-                    null,
-                    toNumber(getRequestParam(AttributeConst.REP_APPROVAL)));
+                    toNumber(getRequestParam(AttributeConst.REP_PLACE)),
+                    toNumber(getRequestParam(AttributeConst.REP_START)),
+                    toNumber(getRequestParam(AttributeConst.REP_ENDING)));
 
             //日報情報登録
             List<String> errors = service.create(rv);
@@ -206,8 +204,6 @@ public class ReportAction extends ActionBase {
 
             //入力された日報内容を設定する
             rv.setReportDate(toLocalDate(getRequestParam(AttributeConst.REP_DATE)));
-            rv.setTitle(getRequestParam(AttributeConst.REP_TITLE));
-            rv.setContent(getRequestParam(AttributeConst.REP_CONTENT));
 
             //日報データを更新する
             List<String> errors = service.update(rv);
@@ -232,38 +228,6 @@ public class ReportAction extends ActionBase {
 
             }
         }
-    }
-    /**
-     * 承認を行う
-     * @throws ServletException
-     * @throws IOException
-     */
-    public void approval0() throws ServletException, IOException {
-
-
-            //idを条件に否認する
-            service.approval0(toNumber(getRequestParam(AttributeConst.REP_ID)));
-
-            //一覧画面にリダイレクト
-            redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
-    }
-    public void approval1() throws ServletException, IOException {
-
-
-            //idを条件に承認を行う
-            service.approval1(toNumber(getRequestParam(AttributeConst.REP_ID)));
-
-            //一覧画面にリダイレクト
-            redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
-    }
-    public void approval2() throws ServletException, IOException {
-
-
-            //idを条件に承認・否認データを削除する
-            service.approval2(toNumber(getRequestParam(AttributeConst.REP_ID)));
-
-            //一覧画面にリダイレクト
-            redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
     }
 
 

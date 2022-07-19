@@ -32,7 +32,6 @@ public enum AttributeConst {
     EMP_PASS("password"),
     EMP_NAME("name"),
     EMP_ADMIN_FLG("admin_flag"),
-    EMP_DIRECTOR_FLG("director_flag"),//追加
 
     //管理者フラグ
     ROLE_ADMIN(1),
@@ -42,24 +41,17 @@ public enum AttributeConst {
     DEL_FLAG_TRUE(1),
     DEL_FLAG_FALSE(0),
 
-    //役職フラグ 追加
-    ROLE_DIRECTOR(1),
-    ROLE_GENERAL2(0),
 
-    //日報管理
+    //勤怠管理
     REPORT("report"),
     REPORTS("reports"),
     REP_COUNT("reports_count"),
     REP_ID("id"),
     REP_DATE("report_date"),
-    REP_TITLE("title"),
-    REP_CONTENT("content"),
-    REP_APPROVAL("approval"),//追加
+    REP_PLACE("place"),
+    REP_START("start_time"),
+    REP_ENDING("ending_time");
 
-    //承認フラグ
-    APP_FLAG_FALSE(0),
-    APP_FLAG_TRUE(1),
-    APP_FLAG_BLANK(2);
 
     private final String text;
     private final Integer i;

@@ -88,8 +88,6 @@ public class ReportService extends ServiceBase {
         List<String> errors = ReportValidator.validate(rv);
         if (errors.size() == 0) {
             LocalDateTime ldt = LocalDateTime.now();
-            rv.setCreatedAt(ldt);
-            rv.setUpdatedAt(ldt);
             createInternal(rv);
         }
 
@@ -111,7 +109,6 @@ public class ReportService extends ServiceBase {
 
             //更新日時を現在時刻に設定
             LocalDateTime ldt = LocalDateTime.now();
-            rv.setUpdatedAt(ldt);
 
             updateInternal(rv);
         }
@@ -154,49 +151,6 @@ public class ReportService extends ServiceBase {
 
     }
 
-    /**
-     * idを条件に日報データを承認する
-     * @param id
-     */
-    public void approval0(Integer id) {
 
-        //idを条件に登録済みの従業員情報を取得する
-        ReportView savedRep = findOne(id);
-
-
-        //否認フラグをたてる
-        savedRep.setApproval(JpaConst.APP_FALSE);
-
-        //更新処理を行う
-        updateInternal(savedRep);
-
-    }
-    public void approval1(Integer id) {
-
-        //idを条件に登録済みの従業員情報を取得する
-        ReportView savedRep = findOne(id);
-
-
-        //承認フラグをたてる
-        savedRep.setApproval(JpaConst.APP_TRUE);
-
-        //更新処理を行う
-        updateInternal(savedRep);
-
-    }
-
-    public void approval2(Integer id) {
-
-        //idを条件に登録済みの従業員情報を取得する
-        ReportView savedRep = findOne(id);
-
-
-        //ブランクフラグをたてる
-        savevdRep.setApproval(JpaConst.APP_BLANK);
-
-        //更新処理を行う
-        updateInternal(savedRep);
-
-    }
 
 }

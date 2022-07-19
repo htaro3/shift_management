@@ -1,7 +1,6 @@
 package actions.views;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,37 +23,27 @@ public class ReportView {
     private Integer id;
 
     /**
-     * 日報を登録した従業員
+     * シフトを登録した従業員
      */
     private EmployeeView employee;
 
     /**
-     * いつの日報かを示す日付
+     * いつの日付
      */
     private LocalDate reportDate;
 
     /**
-     * 日報のタイトル
+     * 仕事場所（出勤：0、在宅：1、休み：2）
      */
-    private String title;
+    private Integer place;
 
     /**
-     * 日報の内容
+     * 勤務開始時間
      */
-    private String content;
+    private Integer start_time;
 
     /**
-     * 登録日時
+     * 勤務終了時間
      */
-    private LocalDateTime createdAt;
-
-    /**
-     * 更新日時
-     */
-    private LocalDateTime updatedAt;
-
-    /**
-     * 承認（否認：0、承認：1）追加
-     */
-    private Integer approval;
+    private Integer ending_time;
 }

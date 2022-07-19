@@ -1,7 +1,6 @@
 package models;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -70,33 +69,23 @@ public class Report {
     private LocalDate reportDate;
 
     /**
-     * 日報のタイトル
-     */
-    @Column(name = JpaConst.REP_COL_TITLE, length = 255, nullable = false)
-    private String title;
-
-    /**
-     * 日報の内容
+     * 仕事場所（出勤：0、在宅：1、休み：2）
      */
     @Lob
-    @Column(name = JpaConst.REP_COL_CONTENT, nullable = false)
-    private String content;
+    @Column(name = JpaConst.REP_COL_PLA, nullable = false)
+    private Integer place;
 
     /**
-     * 登録日時
+     * 勤務開始
      */
-    @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)
-    private LocalDateTime createdAt;
+    @Column(name = JpaConst.REP_COL_STA, nullable = false)
+    private Integer start_time;
 
     /**
-     * 更新日時
+     * 勤務終了
      */
-    @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
-    private LocalDateTime updatedAt;
+    @Column(name = JpaConst.REP_COL_END, nullable = false)
+    private Integer ending_time;
 
-    /**
-     * 承認されたかどうか（否認：0、承認：1 ブランク；2）追加
-     */
-    @Column(name = JpaConst.REP_COL_APPROVAL, nullable = false)
-    private Integer approval;
+
 }

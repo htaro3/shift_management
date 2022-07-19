@@ -21,11 +21,9 @@ public class ReportConverter {
                 rv.getId(),
                 EmployeeConverter.toModel(rv.getEmployee()),
                 rv.getReportDate(),
-                rv.getTitle(),
-                rv.getContent(),
-                rv.getCreatedAt(),
-                rv.getUpdatedAt(),
-                rv.getApproval());//追加
+                rv.getPlace(),
+                rv.getStart_time(),
+                rv.getEnding_time());
     }
 
     /**
@@ -43,11 +41,9 @@ public class ReportConverter {
                 r.getId(),
                 EmployeeConverter.toView(r.getEmployee()),
                 r.getReportDate(),
-                r.getTitle(),
-                r.getContent(),
-                r.getCreatedAt(),
-                r.getUpdatedAt(),
-                r.getApproval());//追加
+                r.getPlace(),
+                r.getStart_time(),
+                r.getEnding_time());
     }
 
     /**
@@ -74,11 +70,9 @@ public class ReportConverter {
         r.setId(rv.getId());
         r.setEmployee(EmployeeConverter.toModel(rv.getEmployee()));
         r.setReportDate(rv.getReportDate());
-        r.setTitle(rv.getTitle());
-        r.setContent(rv.getContent());
-        r.setCreatedAt(rv.getCreatedAt());
-        r.setUpdatedAt(rv.getUpdatedAt());
-        r.setApproval(rv.getApproval());//追加
+        r.setPlace(rv.getPlace());
+        r.setStart_time(rv.getStart_time());
+        r.setEnding_time(rv.getEnding_time());
 
     }
 
